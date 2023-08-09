@@ -1,14 +1,14 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
 
-
-const inter = Inter({ subsets: ['latin'] })
+import Navbar from '@/components/Navbar'
+import Products from './products'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
     <>
-     <h1 className='bg-primary'>Hi</h1>
+      <Navbar />
+      <Products />
+      <Footer />
     </>
   )
 }
