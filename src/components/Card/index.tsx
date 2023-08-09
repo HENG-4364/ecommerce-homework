@@ -29,12 +29,15 @@ export default function CardProducts() {
                 <>
                   <div className="col mb-5">
                     <div className="card h-100">
-                      <img
-                        className="card-img-top"
-                        src={product.image}
-                        alt="..."
-                      />
+                      <div style={{ height: "50vh" }}>
+                        <img
+                          className="card-img-top "
+                          src={product.image}
+                          alt="..."
+                          style={{ height: "100%" }}
+                        />
 
+                      </div>
                       <div className="card-body p-4">
                         <div className="text-center">
                           <h5 className="fw-bolder">{product.product_name}</h5>
