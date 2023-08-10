@@ -1,13 +1,15 @@
-import Navbar from '@/components/Navbar';
 import Products from './products';
-import Footer from '@/components/Footer';
 import Layout from '@/components/Layout';
+import FeatureProducts from '@/components/FeatureProducts';
+import Header from '@/components/Header';
 
 export default function Home() {
   return (
     <>
       <Layout>
+        <Header/>
         <Products />
+        <FeatureProducts />
       </Layout>
     </>
   );
