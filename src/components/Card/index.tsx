@@ -1,4 +1,5 @@
 import { gql, useQuery } from '@apollo/client';
+import Link from 'next/link';
 const QUERY_PRODUCTS = gql`
   query products {
     products {
@@ -17,7 +18,6 @@ const QUERY_PRODUCTS = gql`
 export default function CardProducts() {
   const { data, loading } = useQuery(QUERY_PRODUCTS);
   if (loading || !data) return <>Loading...</>;
-  console.log(data);
 
   return (
     <>
@@ -29,7 +29,7 @@ export default function CardProducts() {
                 <>
                   <div className="col mb-5">
                     <div className="card h-100">
-                      <div style={{ height: "50vh" }}>
+                      <div style={{ height: "100%" }}>
                         <img
                           className="card-img-top "
                           src={product.image}
@@ -47,9 +47,9 @@ export default function CardProducts() {
 
                       <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div className="text-center">
-                          <a className="btn btn-outline-dark mt-auto" href="#">
+                          <Link className="btn btn-outline-dark mt-auto" href={`products/`+product.id}>
                             View options
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>

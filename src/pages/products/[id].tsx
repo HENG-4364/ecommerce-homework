@@ -1,7 +1,31 @@
 import Layout from '@/components/Layout';
 import RelatedProduct from '@/components/Related-Products';
-
+import { gql, useQuery } from '@apollo/client';
+import { useRouter } from 'next/router';
+const PRODUCT_DETAIL = gql`
+  query productDetail($id: Int!) {
+    product(id: $id) {
+      id
+      product_name
+      summary
+      description
+      image
+      category {
+        id
+        category_name
+      }
+    }
+  }
+`;
 export default function ProductDetail() {
+  const router = useRouter();
+  const { data, loading } = useQuery(PRODUCT_DETAIL, {
+    variables: {
+      id: Number(router.query.id),
+    },
+  });
+  if (loading || !data) return <>Loading...</>;
+
   return (
     <>
       <Layout>
@@ -11,13 +35,13 @@ export default function ProductDetail() {
               <div className="col-md-6">
                 <img
                   className="card-img-top mb-5 mb-md-0"
-                  src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg"
+                  src={data?.product.image}
                   alt="..."
                 />
               </div>
               <div className="col-md-6">
-                <div className="small mb-1">SKU: BST-498</div>
-                <h1 className="display-5 fw-bolder">Shop item template</h1>
+                <div className="small mb-1">{data?.product.product_name}</div>
+                <h1 className="display-5 fw-bolder">{data?.product.summary}</h1>
                 <div className="fs-5 mb-5">
                   <span className="text-decoration-line-through">$45.00</span>
                   <span>$40.00</span>
