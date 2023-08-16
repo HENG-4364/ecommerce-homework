@@ -1,5 +1,5 @@
 import ContentAdmin from '../ContentAdmin';
-import Sidebar from '../Sidebar';
+import Sidebar from '../../Sidebar';
 
 export default function Dasboard(props: any) {
   return (

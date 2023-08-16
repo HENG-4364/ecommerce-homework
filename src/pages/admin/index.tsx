@@ -1,5 +1,5 @@
-import Dasboard from '@/screen/Dasboard'
-import React from 'react'
+import Dasboard from '@/screen/Admin/Dasboard';
+import React from 'react';
 
 export default function Admin() {
   return (
@@ -8,5 +8,5 @@ export default function Admin() {
         <h1>hi</h1>
       </Dasboard>
     </>
-  )
+  );
 }

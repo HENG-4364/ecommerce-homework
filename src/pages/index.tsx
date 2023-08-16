@@ -9,13 +9,10 @@ import BlogProducts from '@/components/BlogProducts';
 export default function Home() {
   return (
     <>
-      <Layout>
-        <Header />
-        <RelatedProduct />
-        <Products />
-        <Content />
-        <BlogProducts />
-      </Layout>
+      <Header />
+      <Products />
+      <Content />
+      <BlogProducts />
     </>
   );
 }

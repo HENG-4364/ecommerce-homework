@@ -1,6 +1,6 @@
 import { Title } from '@/components/Title';
-import Dasboard from '@/screen/Dasboard';
-import TableAllProducts from '@/screen/Tables';
+import Dasboard from '@/screen/Admin/Dasboard';
+import TableAllProducts from '@/screen/Admin/Tables';
 import React from 'react';
 
 export default function Products() {
@@ -8,7 +8,7 @@ export default function Products() {
     <>
       <Dasboard>
         <Title title={'All Products'} />
-        <div className='p-3'>
+        <div className="p-3">
           <TableAllProducts />
         </div>
       </Dasboard>
