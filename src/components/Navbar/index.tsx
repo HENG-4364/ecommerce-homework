@@ -33,7 +33,6 @@ export default function Navbar() {
                                 <button type="button" className="btn btn-primary shadow-0">
                                     <i className="fas fa-search"></i>
                                 </button>
-                                
                             </div>
                         </div>
 
@@ -42,7 +41,19 @@ export default function Navbar() {
             </div>
             <nav className="navbar navbar-expand-lg navbar-light bg-white">
                 <div className="container justify-content-center justify-content-md-between">
-                    
+                    <button
+                        className="navbar-toggler border py-2 text-dark "
+                        type="button"
+                        data-mdb-toggle="collapse"
+                        data-mdb-target="#navbarLeftAlignExample"
+                        aria-controls="navbarLeftAlignExample"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                        onClick={handleClick}
+                    >
+                        <i className="fas fa-bars"></i>
+                    </button>
+
 
                     <div className={`navbar-collapse collapse ${isShow? "show":""}`} id="navbarLeftAlignExample">
 
